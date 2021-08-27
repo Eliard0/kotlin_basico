@@ -1,16 +1,17 @@
-open class Livro(nomeDaObra: String) {
-    // val informe:String = "infome o nome da obra"
-    var autor = readLine()
+ class Livro : Comunicacao() {
+
     var nomeDaObra = readLine()
-    val classificacao = readLine()
 
     fun informacoes(){
-        println("Nome do autor : $autor")
         println("Nome da obra : $nomeDaObra")
-        println("Classidicação : $classificacao")
     }
 
-    open fun alterarNomeDaObra(nomeDaObra: String): String? {
+     //sobrescrita
+     override fun brilho() {
+         println("Brilho Normal")
+     }
+
+     fun alterarNomeDaObra(nomeDaObra: String): String? {
         println("Informe o nome da obra")
         var nomeDaObra = readLine()
         println("Informe Para Qual Nome Deseja Trocar")

@@ -1,13 +1,19 @@
 fun main(args: Array<String>) {
-    val obra =  Livro("a mordida do vampiro banguelo")
 
-    obra.informacoes()
-    obra.alterarNomeDaObra("pe de feijao")
+    //mensagem polimorfica
+    val autor : Comunicacao = Livro()
 
-    val tela = Midia("pe de feijao")
+    val autor1 : Comunicacao = Midia()
 
-    tela.addFavorito()
-
-    tela.alterarNomeDaObra("pao")
+    aumentar(autor)
+    aumentar(autor1)
 
 }
+
+fun aumentar(comunicacao: Comunicacao) {
+    comunicacao.brilho()
+
+}
+
+
+

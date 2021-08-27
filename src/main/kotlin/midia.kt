@@ -1,23 +1,37 @@
-class Midia (nomeDaObra : String): Livro(nomeDaObra) {
+class Midia : Comunicacao() {
     var favorito: Boolean = false
 
-    override fun alterarNomeDaObra(nomeDaObra: String): String? {
-        if(favorito==false){
-            super.alterarNomeDaObra(nomeDaObra + println("nao er um favorito"))
-        }else {
-            return super.alterarNomeDaObra(nomeDaObra + println(favorito))
-        }
-        return null
+    //sobrescrita
+    //sobrecarga adicionando outra informação
+    override fun brilho() {
+        print("Brilho Alto. Er favorito : " + "$favorito")
     }
 
-
     fun addFavorito(){
-        if(favorito==false){
-            favorito = true
+        var favorito:Boolean = true
+        if(favorito==true){
             println("adicionado aos favoritos com sucesso")
-        }else{
-            if(favorito == true)
-                println("ja er um favorito")
+        }
+    }
+
+    fun reagir(reacao:Int){
+        if(reacao==5){
+            println("mais ou menos")
+        }
+        if(reacao<5) {
+        println("nao gostei")
+        }
+        if(reacao>=6){
+            println("bom")
+        }
+    }
+
+    fun reagir(reacao:Boolean){
+        if(reacao==true){
+            println("gostei")
+        }
+        if(reacao==false) {
+            println("nao gostei")
         }
     }
 }
